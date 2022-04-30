@@ -1,0 +1,20 @@
+{
+  "name": "provi-hack-back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/phmc99/provi-hack-back.git",
+  "author": "Pedro Costa",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.1",
+    "nodemon": "^2.0.16",
+    "sucrase": "^3.21.0"
+  }
+}
