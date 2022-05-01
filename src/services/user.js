@@ -20,10 +20,10 @@ export const findOneUser = async (id) => {
 };
 
 export const updateAvatarUrl = async (id, file) => {
-  console.log(id)
-  CloudinaryImages.sendImage(file.path, file.fieldname)
+  const [ name, extension ] = file.originalname.split(".")
+  CloudinaryImages.sendImage(file.path, name)
 
-  const url = CloudinaryImages.getImageURL(file.fieldname)
+  const url = CloudinaryImages.getImageURL(name, extension)
 
   const user = await User.findById(id);
 
