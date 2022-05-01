@@ -52,7 +52,8 @@ export const getOne = async (req, res, next) => {
 
 export const patchAvatarUrl = async (req, res, next) => {
   try {
-    const user = updateAvatarUrl();
+    const { id } = req.params
+    const user = await updateAvatarUrl(id, req.file);
     res.json(user);
   } catch (error) {
     console.log(error);
