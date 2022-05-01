@@ -6,12 +6,16 @@ export default class CloudinaryImages {
       img_full_path,
       { public_id: public_id },
       function (error, result) {
-        console.log(result);
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(result);
+        }
       }
     );
   }
 
-  static getImageURL(public_id, options) {
-    return cloudinary.v2.url(public_id + ".jpg", options);
+  static getImageURL(public_id, extension, options) {
+    return cloudinary.v2.url(public_id + `.${extension}`, options);
   }
 }
